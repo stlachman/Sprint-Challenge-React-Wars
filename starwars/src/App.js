@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import StarWarsCharacters from './components/StarWarsCharacters';
+import Pagination from './components/Pagination';
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      next: null
     };
+  }
+
+  handleClick = (event) => {
+    event.preventDefault();
+    this.getCharacters(event.target.href);
   }
 
   componentDidMount() {
@@ -24,18 +32,21 @@ class App extends Component {
       })
       .then(data => {
         console.log(data);
-        this.setState({ starwarsChars: data.results });
+        this.setState({ starwarsChars: data.results, next: data.next });
       })
       .catch(err => {
         throw new Error(err);
       });
   };
 
+
+
   render() {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
         <StarWarsCharacters characters={this.state.starwarsChars} />
+        <Pagination onHandleClick={this.handleClick} nextPage={this.state.next} />
       </div>
     );
   }
