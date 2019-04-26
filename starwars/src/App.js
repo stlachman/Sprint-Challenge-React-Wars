@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       starwarsChars: [],
-      next: null
+      next: null,
+      count: 0
     };
   }
 
@@ -32,7 +33,7 @@ class App extends Component {
       })
       .then(data => {
         console.log(data);
-        this.setState({ starwarsChars: data.results, next: data.next });
+        this.setState({ starwarsChars: data.results, next: data.next, count: data.count });
       })
       .catch(err => {
         throw new Error(err);
@@ -46,7 +47,7 @@ class App extends Component {
       <div className="App">
         <h1 className="Header">React Wars</h1>
         <StarWarsCharacters characters={this.state.starwarsChars} />
-        <Pagination onHandleClick={this.handleClick} nextPage={this.state.next} />
+        <Pagination onHandleClick={this.handleClick} count={this.state.count} nextPage={this.state.next} />
       </div>
     );
   }
