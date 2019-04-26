@@ -1,0 +1,29 @@
+.wrapper {
+  display: grid;
+  grid-gap: 1rem 1.5rem;
+  padding: 0 2rem;
+  grid-template-columns: 1fr;
+}
+
+.character {
+  background: #fff;
+  list-style: none;
+  text-align: left;
+  padding: 1rem;
+}
+
+.character li {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.character li:last-of-type {
+  margin-bottom: 0;
+}
+
+
+@media (min-width: 800px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

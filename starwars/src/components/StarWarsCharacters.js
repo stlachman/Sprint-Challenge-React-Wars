@@ -3,13 +3,13 @@ import StarWarsCharacter from './StarWarsCharacter';
 
 const StarWarsCharacters = (props) => {
   return (
-    <ul className="wrapper">
+    <div className="wrapper">
       {
         props.characters.map(character => {
           return <StarWarsCharacter attributes={character} key={character.created}/>
         })
       }
-    </ul>
+    </div>
   )
 };
 
