@@ -3,6 +3,10 @@
 }
 .Header {
   color: #443e3e;
+  font-family: 'Asap', sans-serif;
+  font-size: 3.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
