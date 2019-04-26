@@ -22,9 +22,6 @@ const Pagination = (props) => {
 						</li>
 					);
 				})}
-				{/*  Get next page functionality
-          <li><a onClick={props.onHandleClick} href={props.nextPage}>2</a></li> 
-        */}
 			</ul>
 		</div>
 	);
